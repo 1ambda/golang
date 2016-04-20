@@ -4,6 +4,10 @@ import (
 	"fmt"
 )
 
+func chapter14() {
+	const Pi = 3.14
+}
+
 func main() {
-	fmt.Println("Hello")
+	chapter14()
 }
