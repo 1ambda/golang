@@ -66,6 +66,38 @@ func castType() {
 	fmt.Printf("%v %v %v \n", i, f, u)
 }
 
+func sum(xs []int) int {
+	acc := 0
+
+	for _, v := range xs {
+		acc += v
+	}
+
+	return acc
+}
+
+func whileUsingFor() {
+	acc := 1
+
+	for acc < 1000 {
+		acc += 1
+	}
+
+	fmt.Println(acc)
+}
+
+func sqrt(x float64) string {
+	if x < 0 {
+		return sqrt(-x) + "i"
+	}
+
+	return fmt.Sprint(math.Sqrt(x))
+}
+
+func pow(x, n, lim float64) floa64 {
+	if v:= 
+}
+
 func main() {
-	formatting2()
+	fmt.Println(sqrt(-3))
 }
