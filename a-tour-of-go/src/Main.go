@@ -5,6 +5,7 @@ import (
 	"math"
 	"math/cmplx"
 	"math/rand"
+	"runtime"
 )
 
 func f1() {
@@ -94,10 +95,64 @@ func sqrt(x float64) string {
 	return fmt.Sprint(math.Sqrt(x))
 }
 
-func pow(x, n, lim float64) floa64 {
-	if v:= 
+func pow1(x, n, lim float64) float64 {
+	if v := math.Pow(x, n); v < lim {
+		return v
+	}
+
+	return lim
+}
+
+func pow2(x, n, lim float64) float64 {
+	if v := math.Pow(x, n); v < lim {
+		return v
+	} else {
+		fmt.Printf("%g >= %g\n", v, lim)
+	}
+
+	return lim // can't use v here
+}
+
+func Sqrt1(x float64) float64 {
+	z := float64(1)
+
+	for i := 1; i < 10; i++ {
+		z = z - (math.Pow(z, 2)-x)/(2*z)
+	}
+
+	return z
+}
+
+func printOS() {
+	switch os := runtime.GOOS; os {
+	case "darwin":
+		fmt.Println("OSX!")
+	case "linux":
+		fmt.Println("LINUX!")
+	default:
+		fmt.Printf("Maybe Window, %s", os)
+	}
+}
+
+func deferTest() {
+	// deferred call's ars are evaluated immediately
+	// ut function call is not execued until the surrouding function returns
+	defer fmt.Println("world")
+
+	fmt.Println("hello")
+}
+
+func deferStackTest() {
+	// deferred calls are pushed onto a stack
+	// when a function returnes, its deferred calls are executed in LIFO order
+
+	for i := 0; i < 10; i++ {
+		defer fmt.Println(i)
+	}
+
+	fmt.Println("return")
 }
 
 func main() {
-	fmt.Println(sqrt(-3))
+	deferStackTest()
 }
