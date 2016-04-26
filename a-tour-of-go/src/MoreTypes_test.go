@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strings"
 )
 
 func ExamplePointers1() {
@@ -200,4 +201,78 @@ func printSliceWithString(s string, x []int) {
 }
 
 func ExampleCreatingASliceWithMake() {
+	a := make([]int, 5)
+	printSliceWithString("a", a)
+
+	b := make([]int, 0, 5)
+	printSliceWithString("b", b)
+
+	c := b[:2] /** with first two elements */
+	printSliceWithString("c", c)
+
+	d := c[2:5]
+	printSliceWithString("d", d)
+
+	// Output:
+	// a len=5 cap=5 [0 0 0 0 0]
+	// b len=0 cap=5 []
+	// c len=2 cap=5 [0 0]
+	// d len=3 cap=3 [0 0 0]
+}
+
+func ExampleSlicesOfSlices() {
+	board := [][]string{
+		[]string{"_", "_", "_"},
+		[]string{"_", "_", "_"},
+		[]string{"_", "_", "_"},
+	}
+
+	board[0][0] = "X"
+	board[2][2] = "O"
+	board[1][2] = "X"
+	board[1][0] = "O"
+	board[0][2] = "X"
+
+	for i := 0; i < len(board); i++ {
+		fmt.Printf("%s\n", strings.Join(board[i], " "))
+	}
+
+	// Output:
+	// X _ X
+	// O _ X
+	// _ _ O
+}
+
+func ExampleAppendingToASlice() {
+	var s []int
+	printSlice(s)
+
+	s = append(s, 0)
+	printSlice(s)
+
+	s = append(s, 1)
+	printSlice(s)
+
+	s = append(s, 2, 3, 4)
+	printSlice(s)
+
+	// Output:
+	// len=0 cap=0 []
+	// len=1 cap=1 [0]
+	// len=2 cap=2 [0 1]
+	// len=5 cap=6 [0 1 2 3 4]
+}
+
+func ExampleRange() {
+	var pow = []int{1, 2, 4, 8, 16}
+	for i, v := range pow {
+		fmt.Printf("2**%d = %d\n", i, v)
+	}
+
+	// Output:
+	// 2**0 = 1
+	// 2**1 = 2
+	// 2**2 = 4
+	// 2**3 = 8
+	// 2**4 = 16
 }
