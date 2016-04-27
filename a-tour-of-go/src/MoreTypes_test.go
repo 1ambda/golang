@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"strings"
 )
 
@@ -275,4 +276,170 @@ func ExampleRange() {
 	// 2**2 = 4
 	// 2**3 = 8
 	// 2**4 = 16
+}
+
+func ExampleRangeContinued() {
+	var pow = []int{0, 0, 0, 0, 0}
+
+	for i := range pow {
+		pow[i] = 1 << uint(i) // == 2 ** i
+	}
+
+	for _, value := range pow {
+		fmt.Printf("%d\n", value)
+	}
+
+	// Output:
+	// 1
+	// 2
+	// 4
+	// 8
+	// 16
+}
+
+type Vertex2 struct {
+	Lat, Long float64
+}
+
+func ExampleMaps() {
+	var m map[string]Vertex2
+	m = make(map[string]Vertex2)
+
+	m["Bell Labs"] = Vertex2{
+		40.68433, -74.39967,
+	}
+
+	fmt.Println(m["Bell Labs"])
+
+	// Output: {40.68433 -74.39967}
+}
+
+func ExampleMapLiterals() {
+	m := map[string]Vertex2{
+		"Bell Labs": Vertex2{
+			40.68433, -74.39967,
+		},
+		"Google": { /** if the type is top-level you can ommit the type name */
+			37.42202, -122.08408,
+		},
+	}
+
+	fmt.Println(m)
+
+	// Output:
+	// map[Bell Labs:{40.68433 -74.39967} Google:{37.42202 -122.08408}]
+}
+
+func ExampleMutatingMaps() {
+	m := make(map[string]int)
+
+	m["Answer"] = 42
+	fmt.Println(m["Answer"])
+
+	m["Answer"] = 48
+	fmt.Println(m["Answer"])
+
+	delete(m, "Answer")
+	fmt.Println(m["Answer"])
+
+	v, ok := m["Answer"]
+	fmt.Println(v, ok)
+
+	// Output:
+	// 42
+	// 48
+	// 0
+	// 0 false
+}
+
+func ExampleWordCount() {
+	input := "hello world 1ambda world"
+	words := strings.Fields(input)
+
+	wordToCount := make(map[string]int)
+
+	for i := range words {
+		word := words[i]
+		if _, ok := wordToCount[word]; !ok {
+			wordToCount[word] = 0
+		}
+
+		wordToCount[word] += 1
+	}
+
+	fmt.Println(wordToCount["world"])
+
+	// Output: 2
+}
+
+func ExampleFunctionValues() {
+	compute := func(fn func(float64, float64) float64) float64 {
+		return fn(3, 4)
+	}
+
+	hypot := func(x, y float64) float64 {
+		return math.Sqrt(x*x + y*y)
+	}
+
+	fmt.Println(hypot(3, 4))
+	fmt.Println(compute(hypot))
+	fmt.Println(compute(math.Pow))
+
+	// Output:
+	// 5
+	// 5
+	// 81
+}
+
+func ExampleFunctionClosures() {
+	adder := func() func(int) int {
+		sum := 0
+
+		return func(x int) int {
+			sum += x
+			return sum
+		}
+	}
+
+	pos, neg := adder(), adder()
+
+	for i := 0; i < 5; i++ {
+		fmt.Println(pos(i), neg(-2*i))
+	}
+
+	// Output:
+	// 0 0
+	// 1 -2
+	// 3 -6
+	// 6 -12
+	// 10 -20
+}
+
+func ExampleFibonacci() {
+	genFibo := func() func() int {
+		a, b := 0, 1
+
+		return func() int {
+			temp := a
+
+			a = b
+			b = temp + a
+
+			return temp
+		}
+	}
+
+	fibo := genFibo()
+
+	for i := 0; i < 6; i++ {
+		fmt.Println(fibo())
+	}
+
+	// Output:
+	// 0
+	// 1
+	// 1
+	// 2
+	// 3
+	// 5
 }
