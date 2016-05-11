@@ -1,4 +1,4 @@
-package main
+package basics
 
 import (
 	"fmt"
@@ -34,7 +34,7 @@ func split(sum int) (x, y int) {
 	return
 }
 
-func formatting1() {
+func ExampleFormatting1() {
 	var (
 		ToBe   bool       = false
 		MaxInt uint64     = (1 << 64) - 1
@@ -48,23 +48,32 @@ func formatting1() {
 	fmt.Printf(f, ToBe, ToBe)
 	fmt.Printf(f, MaxInt, MaxInt)
 	fmt.Printf(f, z, z)
+
+	// Output:
+	// type: bool, value: false
+	// type: uint64, value: 18446744073709551615
+	// type: complex128, value: (2+3i)
 }
 
-func formatting2() {
+func ExampleFormatting2() {
 	var i int
 	var f float64
 	var b bool
 	var s string
 
 	fmt.Printf("%v %v %v %q\n", i, f, b, s)
+
+	// Output: 0 0 false ""
 }
 
-func castType() {
+func ExampleCastType() {
 	i := 42
 	f := float64(i)
 	u := uint(f)
 
 	fmt.Printf("%v %v %v \n", i, f, u)
+
+	// Output: 42 42 42
 }
 
 func sum(xs []int) int {
@@ -77,7 +86,7 @@ func sum(xs []int) int {
 	return acc
 }
 
-func whileUsingFor() {
+func ExampleWhileUsingFor() {
 	acc := 1
 
 	for acc < 1000 {
@@ -85,6 +94,8 @@ func whileUsingFor() {
 	}
 
 	fmt.Println(acc)
+
+	// Output: 1000
 }
 
 func sqrt(x float64) string {
@@ -142,7 +153,7 @@ func deferTest() {
 	fmt.Println("hello")
 }
 
-func deferStackTest() {
+func ExampleDeferStack() {
 	// deferred calls are pushed onto a stack
 	// when a function returnes, its deferred calls are executed in LIFO order
 
@@ -151,8 +162,17 @@ func deferStackTest() {
 	}
 
 	fmt.Println("return")
-}
 
-func main() {
-	deferStackTest()
+	// Output:
+	// return
+	// 9
+	// 8
+	// 7
+	// 6
+	// 5
+	// 4
+	// 3
+	// 2
+	// 1
+	// 0
 }
