@@ -113,7 +113,7 @@ func ExampleSlice() {
 }
 
 func test(vals ...interface{}) {
-	fmt.Println("%q", vals)
+	fmt.Printf("%q", vals)
 }
 
 func use(vals ...interface{}) {
