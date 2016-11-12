@@ -12,6 +12,7 @@ type Message struct {
 }
 
 func main() {
+	rand.Seed(time.Now().UTC().UnixNano())
 
 	c := fanIn(boring("Joe"), boring("Ann"))
 
