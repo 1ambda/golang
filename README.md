@@ -24,7 +24,7 @@ maintains *MUST READ* articles (I'v read)
 ## Tools
 
 - [Go Tooling in Action](https://www.youtube.com/watch?v=uBjoTxosSys)
-
+- **Debugging Go programs with Delve** [Article](https://blog.gopheracademy.com/advent-2015/debugging-with-delve/), [Video](https://www.youtube.com/watch?v=InG72scKPd4)
 
 ## Concurrency
 
