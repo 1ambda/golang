@@ -12,19 +12,34 @@ maintains *MUST READ* articles (I'v read)
 ## Language Design 
 
 - [Rob Pike: Simplicity is Complicated](https://www.youtube.com/watch?v=rFejpH_tAHM)
-> When reading code, it should be clear what the program will do. 
-> When writing code, it should be cear how to make the program do what you want.
+> When reading code, it should be clear what the program will do.  
+> When writing code, it should be clear how to make the program do what you want.
 
 - **Rob Pike: Go at Google** [Article](https://talks.golang.org/2012/splash.article), [Video](https://www.infoq.com/presentations/Go-Google)
-> Leading edge language features don't usually address what you really want.
+> Leading edge language features don't usually address what you really want.  
 > Golang is designed for large applications, large teams and large dependencies.
 
 - **Rob Pike: Go Proverb** [Page](https://go-proverbs.github.io/), [Video](https://www.youtube.com/watch?v=PAAkCSZUG1c)
+
+- [Campoy: Understanding nil](https://www.youtube.com/watch?v=ynoY2xz-F8s)
+- [Golang FAQ: Design](https://golang.org/doc/faq#Design)
+- [Golang FAQ: Types](https://golang.org/doc/faq#types)
+- [Campoy: Functional Go?](https://www.youtube.com/watch?v=ouyHp2nJl0I)
+
 
 ## Tools
 
 - [Go Tooling in Action](https://www.youtube.com/watch?v=uBjoTxosSys)
 - **Debugging Go programs with Delve** [Article](https://blog.gopheracademy.com/advent-2015/debugging-with-delve/), [Video](https://www.youtube.com/watch?v=InG72scKPd4)
+
+## Tips
+
+
+
+## How to Refactor
+
+- [Campoy: JustForFunc #1](https://www.youtube.com/watch?v=eIWFnNz8mF4)
+- [Campoy: JustForFunc #4](https://www.youtube.com/watch?v=MnbMWNR_XZc)
 
 ## Concurrency
 
@@ -40,13 +55,13 @@ maintains *MUST READ* articles (I'v read)
 - [Go Blog: Errors are Values](https://blog.golang.org/errors-are-values)
 - **Don't just check errors, handle them gracefully** [Article](https://dave.cheney.net/2016/04/27/dont-just-check-errors-handle-them-gracefully), [Video](https://www.youtube.com/watch?v=lsBF58Q-DnY)
 
-
 ## Pointer
 
 - [Things I Wish Someone Had Told Me About Go](http://openmymind.net/Things-I-Wish-Someone-Had-Told-Me-About-Go/)
 
-
 ## Interface
+
+> If C++ and Java are about type hierarchies and the taxonomy of types, **Go is about composition**
 
 - [Stackoverflow: What's the mearning of interface{} ?](http://stackoverflow.com/questions/23148812/go-whats-the-meaning-of-interface)
 - [How to use interfaces in Go](http://jordanorelli.com/post/32665860244/how-to-use-interfaces-in-go)
