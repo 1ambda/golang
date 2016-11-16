@@ -1,6 +1,6 @@
 # golang
 
-Maintains *MUST READ* articles (I'v read)
+maintains *MUST READ* articles (I'v read)
 
 ## Quick Tutorial
 
@@ -11,11 +11,15 @@ Maintains *MUST READ* articles (I'v read)
 
 ## Language Design 
 
-> When reading code, it should be clear what the program will do. When writing code, it should be cear how to make the program do what you want.
-
 - [Rob Pike: Simplicity is Complicated](https://www.youtube.com/watch?v=rFejpH_tAHM)
-- **Rob Pike: Go Proverb** [Page](https://go-proverbs.github.io/), [Video](https://www.youtube.com/watch?v=PAAkCSZUG1c)
+> When reading code, it should be clear what the program will do. 
+> When writing code, it should be cear how to make the program do what you want.
+
 - **Rob Pike: Go at Google** [Article](https://talks.golang.org/2012/splash.article), [Video](https://www.infoq.com/presentations/Go-Google)
+> Leading edge language features don't usually address what you really want.
+> Golang is designed for large applications, large teams and large dependencies.
+
+- **Rob Pike: Go Proverb** [Page](https://go-proverbs.github.io/), [Video](https://www.youtube.com/watch?v=PAAkCSZUG1c)
 
 ## Tools
 
