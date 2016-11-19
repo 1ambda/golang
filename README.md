@@ -21,9 +21,9 @@ maintains *MUST READ* articles (I'v read)
 
 - **Rob Pike: Go Proverb** [Page](https://go-proverbs.github.io/), [Video](https://www.youtube.com/watch?v=PAAkCSZUG1c)
 
-- [Campoy: Understanding nil](https://www.youtube.com/watch?v=ynoY2xz-F8s)
 - [Golang FAQ: Design](https://golang.org/doc/faq#Design)
 - [Golang FAQ: Types](https://golang.org/doc/faq#types)
+- [Campoy: Understanding nil](https://www.youtube.com/watch?v=ynoY2xz-F8s)
 - [Campoy: Functional Go?](https://www.youtube.com/watch?v=ouyHp2nJl0I)
 
 
@@ -32,14 +32,9 @@ maintains *MUST READ* articles (I'v read)
 - [Go Tooling in Action](https://www.youtube.com/watch?v=uBjoTxosSys)
 - **Debugging Go programs with Delve** [Article](https://blog.gopheracademy.com/advent-2015/debugging-with-delve/), [Video](https://www.youtube.com/watch?v=InG72scKPd4)
 
-## Tips
+## Idiomatic Go
 
-
-
-## How to Refactor
-
-- [Campoy: JustForFunc #1](https://www.youtube.com/watch?v=eIWFnNz8mF4)
-- [Campoy: JustForFunc #4](https://www.youtube.com/watch?v=MnbMWNR_XZc)
+- **Twelve Go Best Practices**: [Slide](https://talks.golang.org/2013/bestpractices.slide#1), [Video](https://www.youtube.com/watch?v=8D3Vmm1BGoY)
 
 ## Concurrency
 
@@ -63,6 +58,9 @@ maintains *MUST READ* articles (I'v read)
 
 > If C++ and Java are about type hierarchies and the taxonomy of types, **Go is about composition**
 
+> Q. Hey gophers, what was the best/worst moment of your experienes lenaring golang?  
+> A. **The worst was interface, but the best was also interface**
+
 - [Stackoverflow: What's the mearning of interface{} ?](http://stackoverflow.com/questions/23148812/go-whats-the-meaning-of-interface)
 - [How to use interfaces in Go](http://jordanorelli.com/post/32665860244/how-to-use-interfaces-in-go)
 
@@ -74,7 +72,9 @@ maintains *MUST READ* articles (I'v read)
 
 - [Go Blog: Map in Action](https://blog.golang.org/go-maps-in-action)
 
-## Encoding
+## Encoding, JSON
+
+- [JSON, interface, and go generate](https://www.youtube.com/watch?v=YgnD27GFcyA)
 
 
 
