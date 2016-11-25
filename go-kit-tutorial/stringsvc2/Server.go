@@ -13,6 +13,9 @@ import (
 	. "github.com/1ambda/golang/go-kit-tutorial/stringsvc2/transport"
 	"github.com/go-kit/kit/log"
 	"net/http"
+
+	kitprometheus "github.com/go-kit/kit/metrics/prometheus"
+	stdprometheus "github.com/prometheus/client_golang/prometheus"
 )
 
 func main() {
@@ -21,12 +24,35 @@ func main() {
 		port = "9090"
 	}
 	addr := fmt.Sprintf(":%s", port)
+	metricGroup := "my_group"
+	metricSystem := "string_servie"
 
-        logger := log.NewLogfmtLogger(os.Stderr)
+	logger := log.NewLogfmtLogger(os.Stderr)
+	fieldKeys := []string{"method", "error"}
+	requestCount := kitprometheus.NewCounterFrom(stdprometheus.CounterOpts{
+		Namespace: metricGroup,
+		Subsystem: metricSystem,
+		Name:      "request_count",
+		Help:      "Number of requests received",
+	}, fieldKeys)
+	requestLatency := kitprometheus.NewSummaryFrom(stdprometheus.SummaryOpts{
+		Namespace: metricGroup,
+		Subsystem: metricSystem,
+		Name:      "request_latency_microseconds",
+		Help:      "Total duration of requests in microseconds.",
+	}, fieldKeys)
+	countResult := kitprometheus.NewSummaryFrom(stdprometheus.SummaryOpts{
+		Namespace: metricGroup,
+		Subsystem: metricSystem,
+		Name:      "count_result",
+		Help:      "The result of each count method.",
+	}, []string{}) // no fields here
+
 	ctx := context.Background()
 	var svc StringService
-        svc = StringServiceImpl{}
-        svc = LoggingMiddleware{logger, svc}
+	svc = StringServiceImpl{}
+	svc = LoggingMiddleware{logger, svc}
+	svc = InstrumentMiddleware{requestCount, requestLatency, countResult, svc}
 
 	uppercaseHandler := httptransport.NewServer(
 		ctx,
@@ -44,6 +70,7 @@ func main() {
 
 	http.Handle("/uppercase", uppercaseHandler)
 	http.Handle("/count", countHandler)
+	http.Handle("/metrics", stdprometheus.Handler())
 	glog.Printf("Starting :%s\n", port)
 	glog.Fatal(http.ListenAndServe(addr, nil))
 }
