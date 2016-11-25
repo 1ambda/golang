@@ -1,0 +1,12 @@
+package: github.com/1ambda/golang/go-kit-tutorial/stringsvc
+import:
+- package: github.com/go-kit/kit
+  version: v0.3.0
+- package: github.com/pkg/errors
+  version: v0.8.0
+- package: golang.org/x/net
+  subpackages:
+  - context
+- package: github.com/go-logfmt/logfmt
+  version: v0.3.0
+- package: github.com/codegangsta/gin
