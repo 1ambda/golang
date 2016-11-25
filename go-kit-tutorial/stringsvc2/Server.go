@@ -9,10 +9,8 @@ import (
 
 	"context"
 	. "github.com/1ambda/golang/go-kit-tutorial/stringsvc2/endpoint"
-	. "github.com/1ambda/golang/go-kit-tutorial/stringsvc2/middleware"
 	. "github.com/1ambda/golang/go-kit-tutorial/stringsvc2/service"
 	. "github.com/1ambda/golang/go-kit-tutorial/stringsvc2/transport"
-	"github.com/go-kit/kit/endpoint"
 	"github.com/go-kit/kit/log"
 	"net/http"
 )
@@ -24,26 +22,22 @@ func main() {
 	}
 	addr := fmt.Sprintf(":%s", port)
 
+        logger := log.NewLogfmtLogger(os.Stderr)
 	ctx := context.Background()
-	svc := StringServiceImpl{}
-	logger := log.NewLogfmtLogger(os.Stderr)
-
-	var uppercase endpoint.Endpoint = MakeUppercaseEndpoint(svc)
-	uppercase = LoggingMiddleware(log.NewContext(logger).With("method", "uppercase"))(uppercase)
+	var svc StringService
+        svc = StringServiceImpl{}
+        svc = LoggingMiddleware{logger, svc}
 
 	uppercaseHandler := httptransport.NewServer(
 		ctx,
-		uppercase,
+		MakeUppercaseEndpoint(svc),
 		DecodeUppercaseRequest,
 		EncodeResponse,
 	)
 
-	var count endpoint.Endpoint = MakeCountEndpoint(svc)
-	count = LoggingMiddleware(log.NewContext(logger).With("method", "count"))(count)
-
 	countHandler := httptransport.NewServer(
 		ctx,
-		count,
+		MakeCountEndpoint(svc),
 		DecodeCountRequest,
 		EncodeResponse,
 	)
