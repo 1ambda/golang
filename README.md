@@ -35,6 +35,7 @@ maintains *MUST READ* articles (I'v read)
 ## Idiomatic Go
 
 - **Twelve Go Best Practices**: [Slide](https://talks.golang.org/2013/bestpractices.slide#1), [Video](https://www.youtube.com/watch?v=8D3Vmm1BGoY)
+- **Go best practices, six years in:** [Article](https://peter.bourgon.org/go-best-practices-2016/), [Video](https://www.infoq.com/presentations/go-patterns)
 
 ## Concurrency
 
@@ -75,6 +76,13 @@ maintains *MUST READ* articles (I'v read)
 ## Encoding, JSON
 
 - [JSON, interface, and go generate](https://www.youtube.com/watch?v=YgnD27GFcyA)
+
+## Logging
+
+- [The Hunt for a Logger Interface](http://go-talks.appspot.com/github.com/ChrisHines/talks/structured-logging/structured-logging.slide#1)
+- [Logging v. instrumentation](https://peter.bourgon.org/blog/2016/02/07/logging-v-instrumentation.html)
+- [Let’s talk about logging](https://dave.cheney.net/2015/11/05/lets-talk-about-logging)
+
 
 
 
