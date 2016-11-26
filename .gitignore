@@ -1,3 +1,6 @@
+.idea
+*.iml
+
 
 # Created by https://www.gitignore.io/api/go,emacs,intellij
 

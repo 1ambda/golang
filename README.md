@@ -11,21 +11,17 @@ maintains *MUST READ* articles (I'v read)
 
 ## Language Design 
 
-- [Rob Pike: Simplicity is Complicated](https://www.youtube.com/watch?v=rFejpH_tAHM)
 > When reading code, it should be clear what the program will do.  
 > When writing code, it should be clear how to make the program do what you want.
+- [Rob Pike: Simplicity is Complicated](https://www.youtube.com/watch?v=rFejpH_tAHM)
 
-- **Rob Pike: Go at Google** [Article](https://talks.golang.org/2012/splash.article), [Video](https://www.infoq.com/presentations/Go-Google)
 > Leading edge language features don't usually address what you really want.  
 > Golang is designed for large applications, large teams and large dependencies.
-
-- **Rob Pike: Go Proverb** [Page](https://go-proverbs.github.io/), [Video](https://www.youtube.com/watch?v=PAAkCSZUG1c)
+- **Rob Pike: Go at Google** [Article](https://talks.golang.org/2012/splash.article), [Video](https://www.infoq.com/presentations/Go-Google)
 
 - [Golang FAQ: Design](https://golang.org/doc/faq#Design)
 - [Golang FAQ: Types](https://golang.org/doc/faq#types)
-- [Campoy: Understanding nil](https://www.youtube.com/watch?v=ynoY2xz-F8s)
 - [Campoy: Functional Go?](https://www.youtube.com/watch?v=ouyHp2nJl0I)
-
 
 ## Tools
 
@@ -34,6 +30,8 @@ maintains *MUST READ* articles (I'v read)
 
 ## Idiomatic Go
 
+- **Rob Pike: Go Proverb** [Page](https://go-proverbs.github.io/), [Video](https://www.youtube.com/watch?v=PAAkCSZUG1c)
+- [Campoy: Understanding nil](https://www.youtube.com/watch?v=ynoY2xz-F8s)
 - **Twelve Go Best Practices**: [Slide](https://talks.golang.org/2013/bestpractices.slide#1), [Video](https://www.youtube.com/watch?v=8D3Vmm1BGoY)
 - **Go best practices, six years in:** [Article](https://peter.bourgon.org/go-best-practices-2016/), [Video](https://www.infoq.com/presentations/go-patterns)
 
@@ -43,6 +41,7 @@ maintains *MUST READ* articles (I'v read)
 
 - [Go Concurrency Patterns](https://www.youtube.com/watch?v=f6kdp27TYZs)
 - **Rob Pike: Concurrency is not Parallelism** [Slide](https://talks.golang.org/2012/waza.slide), [Video](https://www.youtube.com/watch?v=B9lP-E4J_lc)
+- [Curious Channels](https://dave.cheney.net/2013/04/30/curious-channels)
 
 ## Error Handling
 
@@ -50,10 +49,6 @@ maintains *MUST READ* articles (I'v read)
 - [Go Blog: Error Handling and Go](https://blog.golang.org/error-handling-and-go)
 - [Go Blog: Errors are Values](https://blog.golang.org/errors-are-values)
 - **Don't just check errors, handle them gracefully** [Article](https://dave.cheney.net/2016/04/27/dont-just-check-errors-handle-them-gracefully), [Video](https://www.youtube.com/watch?v=lsBF58Q-DnY)
-
-## Pointer
-
-- [Things I Wish Someone Had Told Me About Go](http://openmymind.net/Things-I-Wish-Someone-Had-Told-Me-About-Go/)
 
 ## Interface
 
@@ -65,17 +60,22 @@ maintains *MUST READ* articles (I'v read)
 - [Stackoverflow: What's the mearning of interface{} ?](http://stackoverflow.com/questions/23148812/go-whats-the-meaning-of-interface)
 - [How to use interfaces in Go](http://jordanorelli.com/post/32665860244/how-to-use-interfaces-in-go)
 
-## Slice
+## Struct
 
-- [Go Blog: Slices Usage and Internals](https://blog.golang.org/go-slices-usage-and-internals)
+- [Struct composition with Go](https://dave.cheney.net/2015/05/22/struct-composition-with-go)
+- [The empty struct](https://dave.cheney.net/2014/03/25/the-empty-struct)
 
-## Map
+## Pointer
+
+- [Pointers in Go](https://dave.cheney.net/2014/03/17/pointers-in-go)
+- [Things I Wish Someone Had Told Me About Go](http://openmymind.net/Things-I-Wish-Someone-Had-Told-Me-About-Go/)
+- [Go has both make and new functions, what gives?](https://dave.cheney.net/2014/08/17/go-has-both-make-and-new-functions-what-gives)
+- [https://dave.cheney.net/2016/03/19/should-methods-be-declared-on-t-or-t](https://dave.cheney.net/2016/03/19/should-methods-be-declared-on-t-or-t)
+
+## Map, Slice
 
 - [Go Blog: Map in Action](https://blog.golang.org/go-maps-in-action)
-
-## Encoding, JSON
-
-- [JSON, interface, and go generate](https://www.youtube.com/watch?v=YgnD27GFcyA)
+- [Go Blog: Slices Usage and Internals](https://blog.golang.org/go-slices-usage-and-internals)
 
 ## Logging
 
@@ -83,6 +83,9 @@ maintains *MUST READ* articles (I'v read)
 - [Logging v. instrumentation](https://peter.bourgon.org/blog/2016/02/07/logging-v-instrumentation.html)
 - [Let’s talk about logging](https://dave.cheney.net/2015/11/05/lets-talk-about-logging)
 
+## Encoding, JSON
+
+- [JSON, interface, and go generate](https://www.youtube.com/watch?v=YgnD27GFcyA)
 
 
 
