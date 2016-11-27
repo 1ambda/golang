@@ -45,10 +45,26 @@ maintains *MUST READ* articles (I'v read)
 
 ## Error Handling
 
+> Error values in Go aren’t special, they are just values like any other, and so you have the entire language at your disposal.
+
 - [Go Blog: Defer, Panic, and Recover](https://blog.golang.org/defer-panic-and-recover)
 - [Go Blog: Error Handling and Go](https://blog.golang.org/error-handling-and-go)
 - [Go Blog: Errors are Values](https://blog.golang.org/errors-are-values)
-- **Don't just check errors, handle them gracefully** [Article](https://dave.cheney.net/2016/04/27/dont-just-check-errors-handle-them-gracefully), [Video](https://www.youtube.com/watch?v=lsBF58Q-DnY)
+- **Dave Cheney: Don't just check errors, handle them gracefully** [Article](https://dave.cheney.net/2016/04/27/dont-just-check-errors-handle-them-gracefully), [Video](https://www.youtube.com/watch?v=lsBF58Q-DnY)
+
+> Go solves the exception problem by not having exceptions.  
+> ...
+> The decision to not include exceptions in Go is an example of its simplicity and orthogonality. Using multiple return values and a simple convention, Go solves the problem of letting programmers know when things have gone wrong and reserves panic for the truly exceptional.
+
+- [Dave Cheney: Why Go gets exceptions right](https://dave.cheney.net/2012/01/18/why-go-gets-exceptions-right)
+- [Dave Cheney: Inspecting errors](https://dave.cheney.net/2014/12/24/inspecting-errors)
+- [Dave Cheney: Error handling vs. exceptions redux](https://dave.cheney.net/2014/11/04/error-handling-vs-exceptions-redux)
+- [Dave Cheney: Errors and Exceptions, redux](https://dave.cheney.net/2015/01/26/errors-and-exceptions-redux)
+
+> Knowing the difference between which errors to ignore and which to check is why we’re paid as professionals.
+
+- [Dave Cheney: Constant errors](https://dave.cheney.net/2016/04/07/constant-errors)
+- [Dave Cheney: Stack traces and the errors package](https://dave.cheney.net/2016/06/12/stack-traces-and-the-errors-package)
 
 ## Interface
 
@@ -62,15 +78,15 @@ maintains *MUST READ* articles (I'v read)
 
 ## Struct
 
-- [Struct composition with Go](https://dave.cheney.net/2015/05/22/struct-composition-with-go)
-- [The empty struct](https://dave.cheney.net/2014/03/25/the-empty-struct)
+- [Dave Cheney: Struct composition with Go](https://dave.cheney.net/2015/05/22/struct-composition-with-go)
+- [Dave Cheney: The empty struct](https://dave.cheney.net/2014/03/25/the-empty-struct)
 
 ## Pointer
 
-- [Pointers in Go](https://dave.cheney.net/2014/03/17/pointers-in-go)
+- [Dave Cheney: Pointers in Go](https://dave.cheney.net/2014/03/17/pointers-in-go)
 - [Things I Wish Someone Had Told Me About Go](http://openmymind.net/Things-I-Wish-Someone-Had-Told-Me-About-Go/)
-- [Go has both make and new functions, what gives?](https://dave.cheney.net/2014/08/17/go-has-both-make-and-new-functions-what-gives)
-- [https://dave.cheney.net/2016/03/19/should-methods-be-declared-on-t-or-t](https://dave.cheney.net/2016/03/19/should-methods-be-declared-on-t-or-t)
+- [Dave Cheney: Go has both make and new functions, what gives?](https://dave.cheney.net/2014/08/17/go-has-both-make-and-new-functions-what-gives)
+- [Dave Cheney: Should methods be declared on T or *T](https://dave.cheney.net/2016/03/19/should-methods-be-declared-on-t-or-t)
 
 ## Map, Slice
 
@@ -81,7 +97,7 @@ maintains *MUST READ* articles (I'v read)
 
 - [The Hunt for a Logger Interface](http://go-talks.appspot.com/github.com/ChrisHines/talks/structured-logging/structured-logging.slide#1)
 - [Logging v. instrumentation](https://peter.bourgon.org/blog/2016/02/07/logging-v-instrumentation.html)
-- [Let’s talk about logging](https://dave.cheney.net/2015/11/05/lets-talk-about-logging)
+- [Dave Cheney: Let’s talk about logging](https://dave.cheney.net/2015/11/05/lets-talk-about-logging)
 
 ## Encoding, JSON
 
