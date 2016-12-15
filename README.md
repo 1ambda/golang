@@ -1,6 +1,6 @@
 # golang
 
-maintains *MUST READ* articles (I'v read)
+maintains *MUST READ* articles
 
 ## Quick Tutorial
 
@@ -39,9 +39,11 @@ maintains *MUST READ* articles (I'v read)
 
 > *Concurrency* is about **structure**, while *Paralleism* is about **execution**
 
-- [Go Concurrency Patterns](https://www.youtube.com/watch?v=f6kdp27TYZs)
 - **Rob Pike: Concurrency is not Parallelism** [Slide](https://talks.golang.org/2012/waza.slide), [Video](https://www.youtube.com/watch?v=B9lP-E4J_lc)
+- [Go Concurrency Patterns](https://www.youtube.com/watch?v=f6kdp27TYZs)
 - [Curious Channels](https://dave.cheney.net/2013/04/30/curious-channels)
+- [Complex Concurrency Patterns With Go](https://www.youtube.com/watch?v=2HOO5gIgyMg)
+- [Advanced Go Concurrency Patterns](https://www.youtube.com/watch?v=QDDwwePbDtw)
 
 ## Error Handling
 
