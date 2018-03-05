@@ -1,8 +1,8 @@
 package main
 
 import (
-	"time"
-	"math/rand"
+	//"time"
+	//"math/rand"
 	"fmt"
 	"sync"
 	"reflect"
@@ -65,7 +65,7 @@ func merge(chans ...<-chan int) <-chan int {
 	return out
 }
 
-func mergeReflect(chans ...<-chan int) <- chan int {
+func mergeReflect(chans ...<-chan int) <-chan int {
 	out := make(chan int)
 
 	go func() {
@@ -74,7 +74,7 @@ func mergeReflect(chans ...<-chan int) <- chan int {
 		var cases []reflect.SelectCase
 		for _, c := range chans {
 			cases = append(cases, reflect.SelectCase{
-				Dir: reflect.SelectRecv,
+				Dir:  reflect.SelectRecv,
 				Chan: reflect.ValueOf(c),
 			})
 		}
@@ -91,10 +91,8 @@ func mergeReflect(chans ...<-chan int) <- chan int {
 		}
 	}()
 
-
 	return out
 }
-
 
 func asChan(vs ...int) <-chan int {
 	c := make(chan int)
@@ -104,9 +102,53 @@ func asChan(vs ...int) <-chan int {
 
 		for _, v := range vs {
 			c <- v
-			time.Sleep(time.Duration(rand.Intn(1000)) * time.Millisecond)
+			//time.Sleep(time.Duration(rand.Intn(1000)) * time.Millisecond)
 		}
 	}()
 
 	return c
+}
+
+func mergeRecur(chans ...<-chan int) <-chan int {
+	switch len(chans) {
+	case 0:
+		c := make(chan int)
+		close(c)
+		return c
+	case 1:
+		return chans[0]
+	case 2:
+		return mergeTwo(chans[0], chans[1])
+	default:
+		m := len(chans) / 2
+		return mergeTwo(mergeRecur(chans[:m]...), mergeRecur(chans[m:]...))
+	}
+}
+
+func mergeTwo(a, b <-chan int) <-chan int {
+	out := make(chan int)
+
+	go func() {
+		defer close(out)
+
+		for a != nil || b != nil {
+			select {
+			case v, ok := <-a:
+				if !ok {
+					a = nil
+					continue
+				}
+				out <- v
+
+			case v, ok := <-b:
+				if !ok {
+					b = nil
+					continue
+				}
+				out <- v
+			}
+		}
+	}()
+
+	return out
 }
